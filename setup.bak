@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo setting up all CoffeePi files, sudo might be required.
+sudo chmod +x ./brewScripts/brewLauncher.py
+sudo chmod +x ./brewScripts/brewCoffee.py
+sudo chmod +x ./brewScripts/brewLoop.py
+sudo chmod +x ./brewScripts/brewSchedule.sh
+sudo chmod +x ./brewScripts/brewStartup.sh
+sudo chmod +x ./.brewCommand.sh
+sudo chmod +x ./.commandbrewCoffee.py
+
+echo choose GPIO to use from output using bcm number. Default used is 26
+echo Note! To change later, you will need to change the number in ./brewScripts/bcm
+read varbcm
+echo $varbcm > ./brewScripts/bcm
+echo kill > ./brewScripts/brewTime
+echo
+echo Will now setup custome commands.
+echo note! CoffeePi must be installed in home directory for this to work.
+echo such as ~/CoffeePi
+echo sleep 3s
+sudo echo source ~/CoffeePi/.brewCommand.sh >> ~/.bashrc
+echo Custom Commands installed on ~/.bashrc
+#rm ./setup.sh
+exit
