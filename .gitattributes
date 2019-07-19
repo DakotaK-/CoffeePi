@@ -2,6 +2,7 @@
 
 * linguist-vendored
 *.py linguist-vendored=false
+*.sh linguist-vendored=false
 
 # Source files
 # ============
