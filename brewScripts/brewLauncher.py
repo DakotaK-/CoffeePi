@@ -16,9 +16,10 @@ def brewLauncher():
         print("Will now exit!")
         exit()
     elif option is "2":
-        subprocess.call("brewSchedule.sh")
+        subprocess.call("~/brewPi/brewScripts/brewSchedule.sh")
+        exit()
     elif option is "3":
-        subprocess.call("brewStartup.sh")
+        subprocess.call("~/brewPi/brewScripts/brewStartup.sh")
         exit()
     else:
         exit()

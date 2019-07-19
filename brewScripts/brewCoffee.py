@@ -1,45 +1,28 @@
-#!/usr/bin/env python3
-
-"""
-shebang uses python. Note must change to the following for python3:
-!/usr/bin/env python3
-"""
-
-
-"""
-Place this file in home directory with:
-    $ mv MakeFuckingCoffee.py ~/
-Mark this file as executable with:
-    $ chmod +x ~/MakeFuckingCoffee.py
-Finally to run do:
-    $ ./MakeFuckingCoffee.py
-"""
+#!/usr/bin/env python3"
 
 #imports the raspberry pi GPIO system & time
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 
 #Sets syntax to BCM rather than Board
-#GPIO.setmode(GPIO.BCM)
-#GPIO.setwarning(False)
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
 
 #The set bcm pin used to signle
 with open('bcm', 'r') as file:
-    bcm = file.read()
+    bcm = int(file.read())
 
 #Sets up and initalizes BCM 26 for output
-#GPIO.setup(bcm, GPIO.out, inital=GPIO.LOW)
+GPIO.setup(bcm, GPIO.OUT)
+GPIO.output(bcm, GPIO.LOW)
 
 
 def makeCoffee():
     #Might need to change depending on the coffee maker. If it is just a quick press, or to hold a connection.
-    #Sets GCM 26 to high for 0.5s
-    '''
+    #Sets GCM to high for 2s
     GPIO.output(bcm, GPIO.HIGH)
-    time.sleep(0.5)
+    time.sleep(2)
     GPIO.output(bcm, GPIO.LOW)
     GPIO.cleanup()
-    '''
 
-    print(bcm)
     print("Coffee is brewing!! ^_^ ")

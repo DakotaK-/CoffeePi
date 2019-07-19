@@ -1,25 +1,39 @@
 #!/bin/bash
 
-echo setting up all CoffeePi files, sudo might be required.
-sudo chmod +x ./brewScripts/brewLauncher.py
-sudo chmod +x ./brewScripts/brewCoffee.py
-sudo chmod +x ./brewScripts/brewLoop.py
-sudo chmod +x ./brewScripts/brewSchedule.sh
-sudo chmod +x ./brewScripts/brewStartup.sh
-sudo chmod +x ./.brewCommand.sh
-sudo chmod +x ./.commandbrewCoffee.py
-
-echo choose GPIO to use from output using bcm number. Default used is 26
-echo Note! To change later, you will need to change the number in ./brewScripts/bcm
+echo Moving all files to home directory ~/brewPi
+echo
+mkdir ~/brewPi
+mv ./brewScripts ~/brewPi
+mv ./README.md ~/brewPi
+echo Files Moved!
+echo
+echo Making all files executable. Sudo may be required.
+echo
+sudo chmod +x ~/brewPi/brewScripts/brewLauncher.py
+sudo chmod +x ~/brewPi/brewScripts/brewCoffee.py
+sudo chmod +x ~/brewPi/brewScripts/brewLoop.py
+sudo chmod +x ~/brewPi/brewScripts/brewSchedule.sh
+sudo chmod +x ~/brewPi/brewScripts/brewStartup.sh
+sudo chmod +x ~/brewPi/brewScripts/.brewCommand.sh
+sudo chmod +x ~/brewPi/brewScripts/.commandbrewCoffee.py
+echo All files now exectuable
+echo
+echo choose GPIO to use from output using the BCM number. Default used is 21
+echo Note! To change later, you will need to change the number in ~/brewPi/brewScripts/bcm
 read varbcm
-echo $varbcm > ./brewScripts/bcm
-echo kill > ./brewScripts/brewTime
+echo $varbcm > ~/brewPi/brewScripts/bcm
+echo kill > ~/brewPi/brewScripts/brewTime
+echo
+echo bcm has been successfully set to $varbcm
+echo brewTime has been initialized
 echo
 echo Will now setup custome commands.
 echo note! CoffeePi must be installed in home directory for this to work.
-echo such as ~/CoffeePi
-echo sleep 3s
-sudo echo source ~/CoffeePi/.brewCommand.sh >> ~/.bashrc
+sleep 3s
+sudo echo source ~/brewPi/brewScripts/.brewCommand.sh >> ~/.bashrc
 echo Custom Commands installed on ~/.bashrc
-#rm ./setup.sh
+echo
+echo Setup succesful
+delay 2
+rm ./setup.sh
 exit
