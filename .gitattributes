@@ -1,6 +1,9 @@
 # Will ignore all files except for .py, and .sh files
 # This will ignore the setup file used for installation as it is not neccesarry a part of the code, and was created for ease of use.
 
-* linguist-vendored #Sets all files to be ignored
-*.py linguist-vendored=false #Sets .py to be checked
-*.sh linguist-vendored=false #Sets .sh to be checked
+#Sets all files to be ignored
+* linguist-vendored
+#Sets .py to be checked
+*.py linguist-vendored=false
+#Sets .sh to be checked
+*.sh linguist-vendored=false
