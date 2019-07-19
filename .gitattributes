@@ -7,3 +7,5 @@
 *.py linguist-vendored=false
 #Sets .sh to be checked
 *.sh linguist-vendored=false
+#Sets setup.sh to be specifically ignored
+setup.sh linguist-vendored=true
