@@ -48,8 +48,6 @@ echo alias brewHelp='echo Usage: brewLauncher, brewCoffee, brewTime, and brewSta
 echo \#Above are the aliase commands from brewPi >> ~/.bash_aliases
 echo Custom Commands installed in ~/.bash_aliases
 
-# Informs a restart will first be required
-echo restart of terminal will be required to use.
 echo Use brewHelp to see usage
 sleep 4
 echo
@@ -61,5 +59,8 @@ rm -R $OLDPWD
 echo $OLDPWD removed
 echo cleanup done
 sleep 1
+
+#resets terminal window to allow custome command usage.
+reset
 
 exit
