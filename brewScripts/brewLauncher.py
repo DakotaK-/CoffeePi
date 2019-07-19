@@ -3,6 +3,7 @@
 #All brewScripts are should be located in ./brewScripts
 
 from brewCoffee import makeCoffee
+
 import subprocess
 
 def brewLauncher():
@@ -12,8 +13,6 @@ def brewLauncher():
     option = input("Please Select an option by inputing the coresponding number: ")
     if option is "1":
         makeCoffee()
-        print("Attempting to brew coffee!")
-        print("Will now exit!")
         exit()
     elif option is "2":
         subprocess.call("~/brewPi/brewScripts/brewSchedule.sh")
