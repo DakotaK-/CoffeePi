@@ -9,6 +9,9 @@ The pin used in my testing was BCM 21, the far top right pin if you look at the 
 
 ### Installing
 
+**This is all very homebrew, and I suggest an understanding to be able to edit the files yourself if you wish to use/build off this.**
+**Use caution when installing, this likly will not receieve any more support and is here for viewing**
+
 Download as a zip anywhere on the RaspberryPi distro.
 Make the setup.sh executable with the following, in the same directory as it.
 
@@ -24,11 +27,9 @@ Then run the setup.sh with the following
 It will install all files in to your home directory located in ~/brewPi
 It will also ask you what BCM pin.
 
-**Please note that it will install custome commands in your ~/.bashrc file, however they do not currently work!**
 
 Now all you need to run whenever you want to brew coffee is ~/brewPi/brewScripts/brewLauncher.py
 
-**I plan to move the launcher to a better place, or to fully implement custome commands to be ran from anywhere.**
 
 ### Usage
 
